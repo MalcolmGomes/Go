@@ -1,8 +1,10 @@
 package main
 
+// Go Tutorial code from: https://www.youtube.com/watch?v=C8LgvuEBraI
 import (
 	"errors"
 	"fmt"
+	"math"
 )
 
 func main() {
@@ -23,6 +25,20 @@ func main() {
 	// result := sum(2, 1)
 	// fmt.Println(result)
 
+	// result, err := sqrt(2)
+	// if err != nil {
+	// 	fmt.Println(err)
+	// } else {
+	// 	fmt.Println(result)
+	// }
+
+	// result, err = sqrt(-1)
+	// if err != nil {
+	// 	fmt.Println(err)
+	// } else {
+	// 	fmt.Println(result)
+	// }
+
 	// Structs
 	// p := person{name: "Malcolm", age: 20}
 	// fmt.Println(p)
@@ -31,6 +47,9 @@ func main() {
 	// i := 7
 	// inc(&i)
 	// fmt.Println(i)
+
+	// Concurrency ---------------------------------
+	// test()
 }
 
 func inc(x *int) {
@@ -46,7 +65,7 @@ func sqrt(x float64) (float64, error) {
 	if x < 0 {
 		return 0, errors.New("undefined for negative numbers")
 	}
-	return 0, nil
+	return math.Sqrt(x), nil
 }
 
 func sum(x int, y int) int {
